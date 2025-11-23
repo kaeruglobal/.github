@@ -1,0 +1,83 @@
+name: 🐛 バグ報告 (不具合)
+description: アプリが正しく動作しない場合の報告はこちら
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ### ⚠️ 報告前の重要なお願い
+        **画面の状態がわかるスクリーンショット（画像）がない場合、原因特定が困難なため、対応が大幅に遅れる、または対応できない場合があります。**
+        可能な限り、エラー画面や挙動がおかしい箇所の画像を添付してください。
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: 発生している問題（概要）
+      description: 何が起きているか、一言で記載してください。
+      placeholder: 例：設定画面で「保存」を押しても反応がない
+    validations:
+      required: true
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: 優先度・緊急度
+      description: 業務への影響度を選択してください。
+      options:
+        - 🔴 S: 業務が完全に停止しており、回避策がない（至急）
+        - 🟠 A: 重要な機能だが、代替手段で回避は可能
+        - 🟡 B: 業務に支障はないが、修正してほしい（軽微なバグ・表示崩れ）
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 再現手順
+      description: 私たちが手元で再現できるように、操作手順を箇条書きで教えてください。
+      placeholder: |
+        1. アプリを起動し、ログインする
+        2. メニューから「〇〇」を開く
+        3. 「××」ボタンをクリックする
+        4. エラーが表示される
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: 本来の正しい動作
+      description: 本来はどうなるはずでしたか？
+      placeholder: エラーにならず、一覧画面に遷移するはず
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: 利用OS
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS
+        - その他
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: アプリのバージョン
+      description: ヘルプ > バージョン情報 に記載の数値を記入してください。
+      placeholder: 例: v1.0.2
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: スクリーンショット・添付ファイル
+      description: |
+        **ここに画像をドラッグ＆ドロップ、または貼り付けてください。**
+        画面キャプチャがあるだけで、修正までの時間が大幅に短縮されます。
